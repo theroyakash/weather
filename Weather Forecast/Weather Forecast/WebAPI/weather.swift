@@ -33,8 +33,7 @@ struct Weather {
         
     }
     
-    
-    static let basePath = "https://api.darksky.net/forecast/YOUR_API_KEY/"
+    static let basePath = "https://api.darksky.net/forecast/API_KEY/"
     
     static func forecast (withLocation location:CLLocationCoordinate2D, completion: @escaping ([Weather]?) -> ()) {
         
@@ -46,7 +45,6 @@ struct Weather {
             var forecastArray:[Weather] = []
             
             if let data = data {
-                
                 do {
                     if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
                         if let dailyForecasts = json["daily"] as? [String:Any] {
@@ -59,14 +57,12 @@ struct Weather {
                             }
                         }
                     }
-                }catch {
+                } catch {
                     print(error.localizedDescription)
                 }
-            
                 completion(forecastArray)
             }
         }
-        
         task.resume()
     }
 }
