@@ -1,10 +1,8 @@
-//
 //  weather.swift
 //  Weather Forecast
 //
 //  Created by Roy Akash on 18/05/19.
-//  Copyright © 2019 The Roy Akash Software, Company. All rights reserved.
-//
+//  Copyright © 2019 theroyakash. All rights reserved.
 
 import Foundation
 import CoreLocation
